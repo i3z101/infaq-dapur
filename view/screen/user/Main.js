@@ -34,15 +34,13 @@ const Main = (props)=>{
             </View>
             <View>
                 <FlatList
-
             showsHorizontalScrollIndicator={false}
             horizontal={true}
             data={packages}
             keyExtractor={(item)=>item.packageId}
             renderItem={(itemData)=>{
               return <Cards cardContainer={styles.containerPackagesStyle}>
-                  <Card.Cover style={styles.imgStyleCard} source={{uri:itemData.item.imageUrl}}/>
-                 
+                  <Card.Cover style={styles.imgStyleCard} source={{uri:itemData.item.imageUrl}} resizeMode='contain'/>
                   <BtnPackage
                   onPress={()=>props.navigation.navigate('package',{
                     packageId:itemData.item.packageId,
@@ -101,20 +99,22 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
-    imgStyle:{ //the image style that was deleted
-      width:Dimensions.get('screen').width,
-      height:Dimensions.get('screen').width/1.5,
-    },
+    // imgStyle:{ //the image style that was deleted
+    //   width:Dimensions.get('screen').width,
+    //   height:Dimensions.get('screen').width*0.12,
+    // },
     containerPackagesStyle:{// the container of package card that holds the image and package name button
       padding:0, 
       marginLeft:10,
       marginRight:10, 
       marginTop:30,
       borderRadius:10,
+      width:Dimensions.get('screen').width/3,
+      height:Dimensions.get('screen').width/2,
     },
     imgStyleCard:{ //the image style inside the card 
-      width:Dimensions.get('screen').width/1.8,
-      height:Dimensions.get('screen').width/2.5,
+      width:125,
+      height:125,
     },
     btnContainer:{ //the button container that leads to packages list page {Make a difference btn}
       backgroundColor:Color.fifth,

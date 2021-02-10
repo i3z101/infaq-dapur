@@ -8,7 +8,7 @@ const BtnPackage= props =>{
     return <TouchableOpacity onPress={props.onPress} style={styles.packageBtnContainer}>
         <Text style={styles.packageName}>{props.packageName}</Text>
         <Card.Actions>
-        <MaterialIcons name={"keyboard-arrow-right"} size={40} color={Color.secondary} />
+        <MaterialIcons name={"keyboard-arrow-right"} size={29} color={Color.secondary} />
         </Card.Actions>
     </TouchableOpacity>
 }
@@ -20,12 +20,12 @@ const styles= StyleSheet.create({
         justifyContent:'space-between',
         padding:10, 
         backgroundColor:Color.fifth,
-        borderRadius:3
+        borderRadius:1.5,
       },
        packageName:{ //package name style
-      fontSize:19, 
+      fontSize:16, 
       color:Color.secondary, 
-      fontFamily:'cairoBold'
+      fontFamily:'cairoSemi'
     },
 })
 
